@@ -1,0 +1,24 @@
+name: my-onnx-service
+version: 1.0.0
+
+env:
+  python_version: "3.8.5"
+
+api:
+  input_type: file
+  output_type: json
+
+artifacts:
+  - name: model
+    type: onnx
+    path: /src/ArtworkClassifier.onnx
+
+handlers:
+  predict:
+    artifact_name: src/ArtworkClassifier.onnx
+    handler_type: onnx
+
+python:
+  packages:
+    - onnx
+    - onnxruntime  
