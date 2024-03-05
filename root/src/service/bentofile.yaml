@@ -1,0 +1,19 @@
+name: artworkclassifier
+
+service: "service:artworkclassifier"
+
+labels: 
+  owner:
+  projects: 
+
+include:
+  - "*.py"
+python:
+  packages:
+    - onnx
+    - onnxruntime  
+
+
+
+
+  
